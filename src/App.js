@@ -14,7 +14,7 @@ export default function App() {
     <Container maxWidth="100%">
       <Box sx={{ textAlign: "center" }}>
         <Typography variant="h2" component="h1" mb={4}>
-          messageTown
+          덕담을 나눠보세요
         </Typography>
         <Box
           sx={{

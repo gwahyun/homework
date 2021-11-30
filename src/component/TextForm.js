@@ -3,6 +3,8 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
+import ChatIcon from "@mui/icons-material/Chat";
 
 const TextForm = ({ setMessage, message, id }) => {
   const componentId = id;
@@ -31,15 +33,18 @@ const TextForm = ({ setMessage, message, id }) => {
       id="textContainer"
     >
       <Typography
-        variant="h4"
+        variant="h5"
         component="h2"
         sx={{
           display: "block",
-          border: 2,
-          p: 2,
-          m: 2,
+          borderRadius: 1,
+          boxShadow: 2,
+          mt: 2,
+          ml: 2,
+          mr: 2,
         }}
       >
+        <ChatIcon color="secondary" />
         {message.id === componentId ? "" : message.message}
       </Typography>
       <form onSubmit={onSubmit}>
@@ -55,12 +60,13 @@ const TextForm = ({ setMessage, message, id }) => {
           <TextField
             id="basic"
             margin="dense"
-            label="메세지를 작성해보세요"
+            label="덕담 입력"
             variant="outlined"
             onChange={onChange}
           />
           <Button variant="outlined" type="submit">
             Send Message
+            <ArrowForwardIosRoundedIcon fontSize="small" />
           </Button>
         </Box>
       </form>
