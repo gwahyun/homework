@@ -4,7 +4,7 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
-import ChatIcon from "@mui/icons-material/Chat";
+import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 
 const TextForm = ({ setMessage, message, id }) => {
   const componentId = id;
@@ -44,7 +44,7 @@ const TextForm = ({ setMessage, message, id }) => {
           mr: 2,
         }}
       >
-        <ChatIcon color="secondary" />
+        <EmojiPeopleIcon color="primary" />
         {message.id === componentId ? "" : message.message}
       </Typography>
       <form onSubmit={onSubmit}>

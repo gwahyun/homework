@@ -11,7 +11,7 @@ export default function App() {
     console.log(message);
   });
   return (
-    <Container maxWidth="100%">
+    <Container maxWidth="lg">
       <Box sx={{ textAlign: "center" }}>
         <Typography variant="h2" component="h1" mb={4}>
           덕담을 나눠보세요
