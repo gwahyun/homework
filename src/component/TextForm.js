@@ -3,11 +3,9 @@ import Button from "@mui/material/Button";
 import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
-import ArrowForwardIosRoundedIcon from "@mui/icons-material/ArrowForwardIosRounded";
-import EmojiPeopleIcon from "@mui/icons-material/EmojiPeople";
 
 const TextForm = ({ setMessage, message, id }) => {
-  const componentId = id;
+const TextForm = (prop) => {
   const [text, setText] = useState("");
 
   const onChange = (event) => {
@@ -16,8 +14,8 @@ const TextForm = ({ setMessage, message, id }) => {
 
   const onSubmit = (event) => {
     event.preventDefault();
-    document.getElementById("basic").value = "";
-    setMessage({ id: componentId, message: text });
+    prop.setMessage(text);
+    setText("");
   };
 
   return (
@@ -33,19 +31,16 @@ const TextForm = ({ setMessage, message, id }) => {
       id="textContainer"
     >
       <Typography
-        variant="h5"
+        variant="h4"
         component="h2"
         sx={{
           display: "block",
-          borderRadius: 1,
-          boxShadow: 2,
-          mt: 2,
-          ml: 2,
-          mr: 2,
+          border: 2,
+          p: 2,
+          m: 2,
         }}
       >
-        <EmojiPeopleIcon color="primary" />
-        {message.id === componentId ? "" : message.message}
+        {prop.message}
       </Typography>
       <form onSubmit={onSubmit}>
         <Box
@@ -60,13 +55,13 @@ const TextForm = ({ setMessage, message, id }) => {
           <TextField
             id="basic"
             margin="dense"
-            label="덕담 입력"
+            label="메세지를 작성해보세요"
             variant="outlined"
             onChange={onChange}
+            value={text}
           />
           <Button variant="outlined" type="submit">
             Send Message
-            <ArrowForwardIosRoundedIcon fontSize="small" />
           </Button>
         </Box>
       </form>
