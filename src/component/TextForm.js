@@ -4,7 +4,6 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 
-const TextForm = ({ setMessage, message, id }) => {
 const TextForm = (prop) => {
   const [text, setText] = useState("");
 
